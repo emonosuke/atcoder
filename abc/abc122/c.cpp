@@ -12,7 +12,5 @@ const int dy[4] = {0, -1, 0, +1};
 int main(){
     cin.tie(0);
     ios_base::sync_with_stdio(false);
-    int n, p; cin >> n >> p;
-    string S; cin >> S;
     
 }
