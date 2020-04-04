@@ -26,11 +26,17 @@ int main(){
     ios_base::sync_with_stdio(false);
     ll n; cin >> n;
     ll ans = 0;
+    // no division
+    ans += get_divisors(n - 1).size() - 1;
+    // division at least once
     vector<ll> divisors = get_divisors(n);
-    for(ll k=2;k*k<=n;k++){
-        for(ll d: divisors){
-            if(((n / d) % k) == 1) ans++;
+    for(ll k: divisors){
+        if(k == 1) continue;
+        ll tmp = n;
+        while(tmp % k == 0){
+            tmp /= k;
         }
+        if(tmp % k == 1) ans++;
     }
-    cout << ans << endl;  // n - 1, n
+    cout << ans << endl;
 }
