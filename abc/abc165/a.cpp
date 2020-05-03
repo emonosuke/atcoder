@@ -13,15 +13,16 @@ int main()
 {
     cin.tie(0);
     ios_base::sync_with_stdio(false);
-    ll n;
-    cin >> n;
-    vector<ll> cnt(n);
-    for (ll i = 1; i < n; i++)
+    ll k, a, b;
+    cin >> k >> a >> b;
+    bool ok = false;
+    for (ll c = a; c <= b; c++)
     {
-        ll a;
-        cin >> a;
-        cnt[a - 1]++;
+        if (c % k == 0)
+            ok = true;
     }
-    for (ll i = 0; i < n; i++)
-        cout << cnt[i] << endl;
+    if (ok)
+        cout << "OK" << endl;
+    else
+        cout << "NG" << endl;
 }

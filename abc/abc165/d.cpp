@@ -13,15 +13,8 @@ int main()
 {
     cin.tie(0);
     ios_base::sync_with_stdio(false);
-    ll n;
-    cin >> n;
-    vector<ll> cnt(n);
-    for (ll i = 1; i < n; i++)
-    {
-        ll a;
-        cin >> a;
-        cnt[a - 1]++;
-    }
-    for (ll i = 0; i < n; i++)
-        cout << cnt[i] << endl;
+    ll a, b, n;
+    cin >> a >> b >> n;
+    ll x = min(b - 1, n);
+    cout << (a * x / b) << endl;
 }
