@@ -14,6 +14,20 @@ int main()
 {
     cin.tie(0);
     ios_base::sync_with_stdio(false);
+    int n, x;
     string s;
-    cin >> s;
+    cin >> n >> x >> s;
+    int ans = x;
+    for (char c : s)
+    {
+        if (c == 'x')
+        {
+            ans = max(ans - 1, 0);
+        }
+        else
+        {
+            ans++;
+        }
+    }
+    cout << ans << endl;
 }
